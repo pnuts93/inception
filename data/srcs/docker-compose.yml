@@ -10,8 +10,7 @@ services:
       - 443:443
     volumes:
       - /home/pnuti/data/v_wordpress:/var/www/html
-      - ./requirements/nginx/wordpress.conf:/etc/nginx/sites-available/wordpress.conf:ro
-      - ./requirements/nginx/adminer.conf:/etc/nginx/sites-available/adminer.conf:ro
+      - ./requirements/nginx/tools/nginx.conf:/etc/nginx/nginx.conf:ro
     environment:
       - DOMAIN_NAME
     networks:
@@ -26,7 +25,7 @@ services:
     ports:
       - 127.0.0.1:9000:9000
     volumes:
-      - /home/pnuti/data/v_wordpress:/var/www/html/wordpress
+      - /home/pnuti/data/v_wordpress:/var/www/html
       - ./requirements/wordpress/tools/php-fpm.conf:/etc/php7/php-fpm.conf:ro
       - ./requirements/wordpress/tools/www.conf:/etc/php7/php-fpm.d/www.conf:ro
     environment:
@@ -102,6 +101,7 @@ services:
     ports:
       - 127.0.0.1:9001:9001
     volumes:
+      - /home/pnuti/data/v_wordpress:/var/www/html
       - ./requirements/adminer/tools/php-fpm.conf:/etc/php7/php-fpm.conf:ro
       - ./requirements/adminer/tools/www.conf:/etc/php7/php-fpm.d/www.conf:ro
     networks:
