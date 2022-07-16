@@ -1,6 +1,6 @@
 FROM alpine:3.14.6
 
-RUN apk update\
+RUN apk update \
 	&& apk upgrade
 RUN apk add mariadb-client \
 	php \
@@ -26,13 +26,8 @@ RUN apk add mariadb-client \
 	php-dom \
 	php-simplexml \
 	php-phar \
-	php-tokenizer \
-	php7-redis
+	php-tokenizer
 
-RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-&& chmod +x wp-cli.phar \
-&& mv wp-cli.phar /usr/local/bin/wp
+RUN wget "https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php" -o /var/www/html/adminer/adminer.php
 
-COPY tools/conf.sh /
-
-ENTRYPOINT [ "sh", "/conf.sh" ]
+CMD ["php-fpm7"]
