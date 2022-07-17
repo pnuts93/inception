@@ -28,6 +28,6 @@ RUN apk add mariadb-client \
 	php-phar \
 	php-tokenizer
 
-ADD "https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php" /var/www/html/pnuti.42.fr/adminer.php
+ADD ./tools/conf.sh .
 
-CMD ["php-fpm7"]
+ENTRYPOINT [ "sh", "conf.sh" ]
