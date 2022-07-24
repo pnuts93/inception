@@ -7,50 +7,216 @@
 		body {
 			font-family: Arial, Helvetica, sans-serif;
 		}
-
 		img {
 			border-radius: 50%;
-			border: 5px solid rgb(28, 150, 180);
+			padding: 10px;
+		}
+		h2 {
+			color: rgb(95, 171, 190);
+			font-weight: bold;
+			font-size: 25px;
+			padding-left: 10px;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		a:hover {
+			text-decoration: underline;
 		}
 		.navbar {
+			width: 100%;
 			display: flex;
 			align-items: center;
 			background-color: rgb(28, 150, 180);
+			position: fixed;
+			top: 0;
 		}
 		.navbar a {
 			font-size: 30px;
 			color: white;
 			padding: 0px 50px 0px 50px;
 			font-weight: bold;
-			text-decoration: none;
 		}
 		.container {
 			width: 100%;
+			padding-top: 80px;
 		}
 		.left-side {
 			float: left;
 			width: 40%;
-			background-color: rgb(28, 150, 180);
+			background-color: rgb(49, 49, 49);
+		}
+		.info-block {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 15px 0px 15px 0px;
+		}
+		.info-block h2 {
+			width: 100%;
+			font-size: 25;
+			color: white;
+			font-weight: bold;
+			padding-left: 10px;
+		}
+		.description {
+			width: 45%;
+			justify-self: start;
+			font-size: 20px;
+			font-style: italic;
+			color: rgb(220,220,220);
+			padding: 2px 10px 2px 10px;
+		}
+		.content {
+			width: 45%;
+			justify-self: end;
+			font-size: 20px;
+			color: white;
+			font-weight: bold;
+			padding: 2px 10px 2px 10px;
 		}
 		.right-side {
 			float: right;
-			width: 40%;
+			width: 60%;
+			height: 90vh;
+			overflow: scroll;
+			overscroll-behavior: auto;
+		}
+		.right-side > * {
+			padding-left: 10px;
+		}
+		.title {
+			width: 100%;
+			color: rgb(95, 171, 190);
+			font-size: 18px;
+			font-weight: normal;
+		}
+		.location {
+			width: 100%;
+			font-style: italic;
+			padding-left: 10px;
+		}
+		.tasks {
+			width: 100%;
+			padding-left: 10px;
+		}
+		.project {
+			width: 100%;
+			height: 25vh;
+			display: flex;
+			justify-content: center;
+		}
+		.project img {
+			border-radius: 20%;
+			width: 20vw;
+			height: 25vh;
+			object-fit: contain;
+		}
+		.project p {
+			width: 30%;
+			padding: 50px;
 		}
 		</style>
 	<body>
 		<div class="navbar">
-			<a href="https://42wolfsburg.de/">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/42Wolfsburg_Logo_ver_pos_black.pdf/page1-589px-42Wolfsburg_Logo_ver_pos_black.pdf.jpg" height="70px" width="70px">
+			<a href="https://42wolfsburg.de/" target="_blank">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/42Wolfsburg_Logo_ver_pos_black.pdf/page1-589px-42Wolfsburg_Logo_ver_pos_black.pdf.jpg" alt="42" height="70px" width="70px">
 			</a>
-			<a href="https://pnuti.42.fr/index.php">Blog</a>
+			<a href="https://pnuti.42.fr/index.php" style="width: 80%;" target="_blank">Blog</a>
+			<a href="https://www.linkedin.com/in/pietro-nuti-2a5844161/" style="justify-self: end;" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/05/linkedin-logo-white-1024x1024.png" alt="linkedin" height="60px" width="60px"></a>
 		</div>
 		<div class="container">
 			<div class="left-side">
-				<h2>Pietro Nuti</h2>
+				<div class="info-block">
+					<img src="https://media-exp1.licdn.com/dms/image/C4D03AQEWN9jd7QBT_Q/profile-displayphoto-shrink_200_200/0/1630771937420?e=1663804800&v=beta&t=cmlUmGs65NN53soT5OGg_WL82Z8JjcNBuranR_JrYvU" height="200px" width="200px">
+				</div>
+				<div class="info-block">
+					<h2>Personal Information</h2>
+					<div class="description">Name:</div>
+					<div class="content">Pietro Nuti</div>
+					<div class="description">City:</div>
+					<div class="content">Berlin</div>
+					<div class="description">Email:</div>
+					<div class="content">example@example.com</div>
+					<div class="description">Tel:</div>
+					<div class="content">+00 00000000</div>
+				</div>
+				<div class="info-block">
+					<h2>Languages</h2>
+					<div class="description">Italian</div>
+					<div class="content">Mother thongue</div>
+					<div class="description">English</div>
+					<div class="content">C1</div>
+					<div class="description">German</div>
+					<div class="content">B1</div>
+				</div>
+				<div class="info-block">
+					<h2>Programming Languages</h2>
+					<div class="content">C</div>
+					<div class="content">C++</div>
+					<div class="content">Bash</div>
+					<div class="content">Python</div>
+					<div class="content">HTML/CSS</div>
+					<div class="content">JavaScript</div>
+				</div>
 			</div>
 			<div class="right-side">
-				<h2>Experience</h2>
+				<h2>Profile</h2>
+				<p>Urban Planner turned Software developer. Specialised in System Administration</p>
+				<h2>Work Experience</h2>
+				<div class="info-block">
+					<h3 class="title"><b>System Administrator</b> - 04.07.2022 - Ongoing</h3>
+					<p class="location">TURM Solutions Gmbh - Berlin<br></p>
+					<p class="tasks">Administration of n linux bare metal servers, including monitoring, updates management, scripting and security.</p>
+					</ul>
+				</div>
+				<div class="info-block">
+					<h3 class="title"><b>Software Developer</b> - 14.06.2022 - Ongoing</h3>
+					<p class="location">Stadt Wolfsburg - Wolfsburg</p>
+					<p class="tasks">Production of a containerized prototype for the automation of data maintenance and analysis</p>
+				</div>
+				<div class="info-block">
+					<h3 class="title"><b>Junior Project Manager</b> - 21.11.2019 - 31.07.2020</h3>
+					<p class="location">Fondazione Politecnico di Milano - Milano</p>
+					<p class="tasks">Urban analysis and strategic planning for Milan's Climate Change Adaptation Plan</p>
+				</div>
+				<div class="info-block">
+					<h3 class="title"><b>Intern</b> - 10.01.2019 - 31.06.2019</h3>
+					<p class="location">Comune di Milano - Milano</p>
+					<p class="tasks">Urban analysis and strategic planning for Milan's Climate Change Adaptation Plan</p>
+				</div>
+				<h2>Education and Training</h2>
+				<div class="info-block">
+					<h3 class="title"><b>Software Engineering</b> - 10.05.2021 - Ongoing</h3>
+					<p class="location">42 Wolfsburg - Wolfsburg</p>
+					<p class="tasks">C and C++ programming, Unix systems, System Administration, Networks, Docker, Full Stack Development. Extra curricular activities as Scholarship recipient and Red Hat Academy Student Ambassador</p>
+				</div>
+				<div class="info-block">
+					<h3 class="title"><b>M.A. Urban Planning</b> - 08.10.2016 - 17.07.19</h3>
+					<p class="location">Università Iuav di Venezia - Venice</p>
+					<p class="tasks">Urban analysis, urban planning, urban design, policy design.</p>
+				</div>
+				<div class="info-block">
+					<h3 class="title"><b>B.A. Architecture</b> - 18.09.2012 - 23.11.2016</h3>
+					<p class="location">Università degli Studi di Cagliari - Cagliari</p>
+					<p class="tasks">Architectonical design, project planning.</p>
+				</div>
 			</div>
+		</div>
+		<h2 style="display: inline-block; padding-top: 50px; padding-left: 20vw;">Some Projects</h2>
+		<div class="project">
+			<img src="https://user-images.githubusercontent.com/61493084/177805518-fda58850-0ca1-4770-b13d-3d5df7e4fc4b.png" alt="ray-tracer">
+			<p><b><a href="https://github.com/pnuts93/miniRT" target="_blank">MiniRT - A ray-tracing project</a></b><br/>"MiniRT" is a grafic project from 42's Core Curriculum: the goal is to build a simple - yet functional - ray-tracer. The project can handle three primitive shapes (sphere, plane and cylinder) and comes with a simple GUI that allows the user to modify coordinates and dimensions of the different objects.</p>
+		</div>
+		<div class="project">
+			<img src="https://user-images.githubusercontent.com/61493084/180640294-f08b32b2-4acf-4889-838d-693aef8ec25e.png" alt="so-long">
+			<p><b><a href="https://github.com/pnuts93/so_long" target="_blank">So long - A 2D videogame</a></b><br/>"So long" is a grafic project from 42's Core Curriculum: the goal is to get familiar with hooks and event handling. The result is a simple videogame where our hero needs to collect all of the coffee cups and escape the map through the portal.</p>
+		</div>
+		<div class="project">
+			<img src="https://user-images.githubusercontent.com/61493084/180641538-13849f8f-b895-46b7-b961-3f1557e16d31.png" alt="inception">
+			<p><b><a href="https://github.com/pnuts93/inception" target="_blank">Inception - A containerized website</a></b><br/>"Inception" is a web-development project from 42's Core Curriculum: the goal is to get familiar with Docker, SQL databases and networking. The result is a wordpress website with an optional personalised static page: in this case the page was dedicated to a small portfolio.</p>
 		</div>
 	</body>
 </html>
