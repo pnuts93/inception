@@ -28,6 +28,7 @@ services:
       - /home/pnuti/data/v_wordpress:/var/www/html
       - ./requirements/wordpress/tools/php-fpm.conf:/etc/php7/php-fpm.conf:ro
       - ./requirements/wordpress/tools/www.conf:/etc/php7/php-fpm.d/www.conf:ro
+      - ./requirements/wordpress/tools/home.html:/var/www/html/pnuti.42.fr/home/home.html
     environment:
       - WORDPRESS_DB_HOST
       - WORDPRESS_DB_USER

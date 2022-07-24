@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # download and install wordpress
-if [ ! -d "/var/www/html/pnuti.42.fr" ];
+if [ ! -d "/var/www/html/pnuti.42.fr/wp-admin" ];
 then
 	mkdir -p /var/www/html/pnuti.42.fr
 	wp core download --path=/var/www/html/pnuti.42.fr --allow-root
@@ -11,7 +11,7 @@ then
 		--dbhost=$WORDPRESS_DB_HOST \
 		--path=/var/www/html/pnuti.42.fr \
 		--allow-root
-	sed -i "38i define( 'WP_REDIS_HOST', 'srcs_redis-cache_1' );" /var/www/html/pnuti.42.fr/wp-config.php
+	sed -i "38i define( 'WP_REDIS_HOST', 'redis-cache' );" /var/www/html/pnuti.42.fr/wp-config.php
 	sed -i "39i define( 'WP_CACHE', true );" /var/www/html/pnuti.42.fr/wp-config.php
 	wp config set --add WP_CACHE_KEY_SALT pnuti.42.fr \
 		--path=/var/www/html/pnuti.42.fr \

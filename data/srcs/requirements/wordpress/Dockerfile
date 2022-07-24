@@ -34,6 +34,5 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 && mv wp-cli.phar /usr/local/bin/wp
 
 COPY tools/conf.sh /
-COPY tools/home.html /var/www/html/pnuti.42.fr/
 
 ENTRYPOINT [ "sh", "/conf.sh" ]
