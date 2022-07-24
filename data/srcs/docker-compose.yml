@@ -28,7 +28,6 @@ services:
       - /home/pnuti/data/v_wordpress:/var/www/html
       - ./requirements/wordpress/tools/php-fpm.conf:/etc/php7/php-fpm.conf:ro
       - ./requirements/wordpress/tools/www.conf:/etc/php7/php-fpm.d/www.conf:ro
-      - ./requirements/wordpress/tools/home.html:/var/www/html/pnuti.42.fr/home/home.html
     environment:
       - WORDPRESS_DB_HOST
       - WORDPRESS_DB_USER
@@ -83,7 +82,7 @@ services:
       - 0.0.0.0:20:20
       - 0.0.0.0:21:21
       - 990:990
-      - 50000-51000:50000-51000
+      - 50000-50010:50000-50010
     volumes:
       - /home/pnuti/data/v_wordpress:/data/
       - ./requirements/ftp/tools/vsftpd.conf:/etc/vsftpd/vsftpd.conf
@@ -107,6 +106,7 @@ services:
       - ./requirements/adminer/tools/www.conf:/etc/php7/php-fpm.d/www.conf:ro
     networks:
       - webserver
+      - wp
     restart: unless-stopped
 
 networks:

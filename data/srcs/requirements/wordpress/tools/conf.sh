@@ -1,9 +1,8 @@
 #!/bin/sh
 
 # download and install wordpress
-if [ ! -d "/var/www/html/pnuti.42.fr/wp-admin" ];
+if [ ! -d "/var/www/html/pnuti.42.fr" ];
 then
-	mkdir -p /var/www/html/pnuti.42.fr
 	wp core download --path=/var/www/html/pnuti.42.fr --allow-root
 	wp config create --dbname=$WORDPRESS_DB_NAME \
 		--dbuser=$WORDPRESS_DB_USER \
@@ -49,6 +48,13 @@ then
 		--activate \
 		--path=/var/www/html/pnuti.42.fr \
 		--allow-root
+	wp redis enable --force
+fi
+
+if [ ! -d "/var/www/html/pnuti.42.fr/home" ];
+then
+	mkdir -p /var/www/html/pnuti.42.fr/home
+	mv home.html /var/www/html/pnuti.42.fr/home/
 fi
 
 adduser -S nginx && addgroup -S nginx && adduser nginx nginx

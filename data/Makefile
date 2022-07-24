@@ -1,7 +1,7 @@
 USER := $(shell whoami)
 
 all : stop
-	docker-compose -f srcs/docker-compose.yml up --build -d
+	docker pull alpine:3.15 ; docker-compose -f srcs/docker-compose.yml up --build -d
 
 clean : stop
 	docker system prune -af
