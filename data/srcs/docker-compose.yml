@@ -92,8 +92,6 @@ services:
     networks:
       - ftp
     restart: unless-stopped
-    extra_hosts:
-    - "host.docker.internal:host-gateway"
 
   adminer:
     depends_on:
